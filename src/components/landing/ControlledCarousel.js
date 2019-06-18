@@ -2,12 +2,18 @@ import React, { Component } from 'react';
 import img from './images/1.jpg'
 import img1 from './images/2.jpg'
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel, onClickThumb} from 'react-responsive-carousel';
-import '../App.css';
-export default class ControlledCarousel extends Component {
-  render() {
+import { Carousel} from 'react-responsive-carousel';
+import LanguageBar from './LanguageBar';
+const ControlledCarousel =props =>{
+
+  let languages = ["English","Hindi","Marathi","Malayalam","English","Hindi","Marathi","Malayalam","English","Hindi","Marathi","Malayalam"];
     return (
-      <Carousel autoPlay onClickThumb={false}>
+<div>
+      <div> 
+
+      <LanguageBar languages={languages}/>
+      </div>
+      <Carousel autoPlay >
       <div>
         <img src={img} />
         <p className="legend">Your word is lamp of my feet ,<br/>A light on my path</p>
@@ -21,7 +27,8 @@ export default class ControlledCarousel extends Component {
         <p className="legend">Your word is lamp of my feet ,<br/>A light on my path</p>
       </div>
       
-    </Carousel>
+    </Carousel></div>
     )
-  }
-}
+};
+
+export default ControlledCarousel; 
